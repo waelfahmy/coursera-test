@@ -27,7 +27,7 @@
     right: 0px;
     font-family: cursive;
     font-weight: bold;
-    font-size: 20px /* 25% larger than 16px */
+    font-size: 20px; /* 25% larger than 16px */
 
     border-left: 1px solid black;
     border-bottom: 1px solid black;
