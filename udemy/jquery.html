@@ -9,10 +9,10 @@
 <body>
 
 <script type="text/javascript">
-	console.log("logging ajax");
+	console.log("logging ajax2");
 
-$.ajax("info.tt").done(function(data){
-	alert(data);
+$.ajax("info.txt").done(function(data){
+	$("body").html("<p>"+data+"</p>");
 }).fail(function(){
 	alert("could not get data");
 });
