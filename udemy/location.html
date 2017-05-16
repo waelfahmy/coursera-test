@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <p id="loc"></p>
+
+
+        <script type="text/javascript">
+            var a = document.getElementById("loc");
+
+  	            function jsonpCallback(data) { 
+                  if(data.address.country != 'Egypt'){
+
+                  }
+	            // a.innerHTML = "Latitude: " + data.latitude + 
+             //                  "<br/>Longitude: " + data.longitude + 
+             //                  "<br/>Country: " + data.address.country; 
+             a.innerHTML = "Good Luck, you are outside Egypt";
+ 	            }
+        </script>
+        <script src="http://api.wipmania.com/jsonp?callback=jsonpCallback"
+                     type="text/javascript"></script>
+
+
+    </body>
+</html>
+
