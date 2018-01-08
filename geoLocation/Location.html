@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place searches</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 400px;
+        width: 200px
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+    <script>
+var map;
+var infowindow;
+
+
+function initialize() {
+/*
+  var pyrmont = new google.maps.LatLng(document.getElementById('latText').value,document.getElementById('lonText').value );
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
+    center: pyrmont,
+    zoom: 15
+  });
+
+var myLocation = new google.maps.LatLng(document.getElementById('latText').value,document.getElementById('lonText').value );
+
+
+var image = {
+    url: 'arrow.png',
+	 // This marker is 20 pixels wide by 32 pixels tall.
+    size: new google.maps.Size(32, 32),
+    // The origin for this image is 0,0.
+    origin: new google.maps.Point(0,0),
+    // The anchor for this image is the base of the flagpole at 0,32.
+    anchor: new google.maps.Point(0, 25)
+  };    
+    var marker = new google.maps.Marker({
+    map: map,
+    draggable:true,
+//     icon:	image,
+icon: {
+      path: google.maps.SymbolPath.CIRCLE,
+      scale: 10
+    },
+    position: myLocation
+  });
+  
+  
+
+  */
+
+  
+  var myLocation = new google.maps.LatLng(document.getElementById('latText').value,document.getElementById('lonText').value );
+map = new google.maps.Map(document.getElementById('map-canvas'), {
+    center: myLocation,
+    zoom: 15
+  });
+
+    var marker = new google.maps.Marker({
+    map: map,
+    draggable:true,
+    position: myLocation
+  });
+
+  
+  
+   google.maps.event.addListener( marker,'click', function() {
+   console.log("Test");
+   console.log(marker.position.lat());
+   console.log(marker.position.lng());
+   
+//     infowindow.setContent("My Location");
+    document.getElementById('latText').value=marker.position.lat();
+    document.getElementById('lonText').value=marker.position.lng();
+//      cityCircle.setCenter(marker.position);
+//    infowindow.open(map, this);
+
+  });
+  
+  
+	
+  
+}
+
+
+
+
+
+ google.maps.event.addDomListener(window, 'load', initialize); // Uncomment to show the map at the beginning of the page load
+
+    </script>
+  </head>
+  <body>
+  <div id="inputLatLon">
+<form action="MAILTO:info@pharmakhana.com" method="post" enctype="text/plain">
+  Company Name: <input id="CompanyName" name="CompanyName" type="Text" value="Company Name"><br>
+  Telephone number:<input id="phone" name="phone" type="Text" value="909-909-909"><br>
+  Latitude: <input id="latText" name="Latitude" type="Text" value="29.340039"><br>
+  Longitude: <input id="lonText" name="Longitude" type="Text" value="48.038184"><br>
+  <input id="processMap" type="submit" value="submit"><br>
+</form>
+
+</div>
+    <div id="map-canvas"></div>
+
+  </body>
+</html>
